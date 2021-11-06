@@ -2,6 +2,8 @@
 
 ## AWS Cognito Part 1
 
+### Sections
+
 ### Class Videos
 
 - [YouTube English](https://www.youtube.com/watch?v=vC33wJ6DfjQ&ab_channel=PanacloudServerlessSaaSTraining)
