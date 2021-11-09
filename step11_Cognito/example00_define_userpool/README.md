@@ -14,3 +14,4 @@
 2. Naviagte to the newly created directory using `cd example00_define_userpool`
 3. Create a cdk app using `cdk init app --language typescript`
 4. Use `npm run watch` to auto build our app as we code
+5. Install AWS Cognito in the app using `npm i @aws-cdk/aws-cognito`
