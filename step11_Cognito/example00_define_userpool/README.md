@@ -1,14 +1,16 @@
-# Welcome to your CDK TypeScript project!
+# Define Userpool
 
-This is a blank project for TypeScript development with CDK.
+## Steps using AWS console
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+1. Signin to AWS web console
+2. Navigate to Cognito services
+3. Select manage userpools
+4. Select create new user pool
+5. Foolow the instruction.
 
-## Useful commands
+## Steps using cdk
 
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
+1. Create a new directory by using `mkdir example00_define_userpool`
+2. Naviagte to the newly created directory using `cd example00_define_userpool`
+3. Create a cdk app using `cdk init app --language typescript`
+4. Use `npm run watch` to auto build our app as we code
