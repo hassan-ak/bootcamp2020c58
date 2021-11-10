@@ -7,3 +7,12 @@ AWS cognito is used for user management (signup/signin).Cognito is basedon JWT t
 ## Sections
 
 - [Define UserPool](./Example00_define_Userpool)
+
+## Reading Materila
+
+- [Getting Started with User Pools](https://docs.aws.amazon.com/cognito/latest/developerguide/getting-started-with-cognito-user-pools.html)
+- [Using Tokens with User Pools](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-tokens-with-identity-providers.html)
+- [Accessing AWS Services Using an Identity Pool After Sign-in](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-integrating-user-pools-with-identity-pools.html)
+- [Getting Started with Amazon Cognito Identity Pools (Federated Identities)](https://docs.aws.amazon.com/cognito/latest/developerguide/getting-started-with-identity-pools.html)
+- [AWS Service Region Availability](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/)
+- [AWS cognito module](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-cognito-readme.html)
