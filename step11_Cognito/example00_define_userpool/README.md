@@ -21,6 +21,46 @@
    import * as cognito from "@aws-cdk/aws-cognito";
    ```
 
+7. Update "lib/example00_define_userpool.ts" to define user pool
+
+   ```
+   const userPool = new cognito.UserPool(this, "TestUserPool", {
+      userPoolName: "Test User Pool",
+      selfSignUpEnabled: true, // Allow users to sign up
+      autoVerify: { email: true }, // Verify email addresses by sending a verification code
+      signInAliases: { email: true }, // Set email as an alias
+      userVerification: {
+        emailSubject: "Verify your email for our awesome app!",
+        emailBody:
+          "Hello {username}, Thanks for signing up to our awesome app! Your verification code is {####}",
+        emailStyle: cognito.VerificationEmailStyle.CODE,
+      }, ///customize email and sms
+      standardAttributes: {
+        fullname: {
+          required: true,
+          mutable: false,
+        },
+      }, ////Attributes already define by cognito
+      customAttributes: {
+        myappid: new cognito.StringAttribute({
+          minLen: 5,
+          maxLen: 15,
+          mutable: false,
+        }),
+      }, ////Custom Attributes defined according to the application needs
+      passwordPolicy: {
+        minLength: 12,
+        requireLowercase: true,
+        requireUppercase: true,
+        requireDigits: true,
+        requireSymbols: true,
+        tempPasswordValidity: cdk.Duration.days(3),
+      }, ///Password Policy
+      accountRecovery: cognito.AccountRecovery.EMAIL_ONLY, ///Account Recovery email
+    });
+
+   ```
+
 ## Reading Material
 
 - [Coginto CDK](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-cognito-readme.html)
