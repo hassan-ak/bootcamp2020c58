@@ -61,6 +61,10 @@
 
    ```
 
+8. Deploy the app using cdk deploy
+9. Deployed user pool can be viewd in AWS console
+10. Destroy the app using cdk destroy
+
 ## Reading Material
 
 - [Coginto CDK](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-cognito-readme.html)
