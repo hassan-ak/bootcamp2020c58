@@ -8,6 +8,7 @@ AWS cognito is used for user management (signup/signin).Cognito is based on JWT 
 
 - [Define UserPool](./example00_define_userpool)
 - [Userpool with lambda trigger](./example01_userpool_with_lambda_trigger)
+- [Cognito with Frontend Amplify](./example02_cognito_with_frontend_amplify)
 
 ## Reading Materila
 
