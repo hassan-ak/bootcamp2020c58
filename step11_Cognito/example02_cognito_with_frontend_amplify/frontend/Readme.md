@@ -1,4 +1,4 @@
-# Gatsby Empty Project
+# AWS cognito in Gatsby APP using Amplify
 
 ## Steps to code
 
