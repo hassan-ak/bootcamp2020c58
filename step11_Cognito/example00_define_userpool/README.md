@@ -1,4 +1,4 @@
-# Step 11-01 Cognito User pool
+# Step 11-00 Cognito User pool
 
 ## Steps using AWS console
 
