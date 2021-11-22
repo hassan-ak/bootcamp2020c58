@@ -78,6 +78,7 @@
     ```
 
 11. Working with third party provider we need developer account. This case we are dealing with google so follow these steps
+
     - Naviagte to google developers console
     - Create new project
     - Navigate to credentials
@@ -95,3 +96,29 @@
         ```
       - hit create
     - from the create OAuth ID copy client ID and secret
+
+12. Update "lib/cdk-backend-stack.ts" to define a provider
+
+    ```javascript
+    const provider = new cognito.UserPoolIdentityProviderGoogle(
+      this,
+      "googleProvider",
+      {
+        userPool: userPool,
+        clientId: "Google Client ID", // Google Client id
+        clientSecret: "Google Client Secret", // Google Client Secret
+        attributeMapping: {
+          email: cognito.ProviderAttribute.GOOGLE_EMAIL,
+          givenName: cognito.ProviderAttribute.GOOGLE_GIVEN_NAME,
+          phoneNumber: cognito.ProviderAttribute.GOOGLE_PHONE_NUMBERS,
+        },
+        scopes: ["profile", "email", "openid"],
+      }
+    );
+    ```
+
+13. Update "lib/cdk-backend-stack.ts" to register provider with userPool
+
+    ```javascript
+    userPool.registerIdentityProvider(provider);
+    ```
