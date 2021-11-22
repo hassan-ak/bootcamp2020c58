@@ -79,3 +79,22 @@
 
     export default awsmobile;
     ```
+
+15. Create "src/amplifyContext/client.tsx" to define an amplify client where we need to configure the aws auth varibles with amplify
+
+    ```javascript
+    import React, { ReactNode } from "react";
+    import Amplify from "aws-amplify";
+    import awsmobile from "../aws-exports";
+
+    interface props {
+      children: ReactNode;
+    }
+
+    export default function amplifyClient({ children }: props) {
+      Amplify.configure(awsmobile);
+      return <div>{children}</div>;
+    }
+    ```
+
+16.
