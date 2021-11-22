@@ -1,9 +1,26 @@
-import React from "react";
+import React, { FunctionComponent, useEffect, useState } from "react";
+import { AmplifyAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
+import { AuthState, onAuthUIStateChange } from "@aws-amplify/ui-components";
 
-export default function Home() {
-  return (
-    <div>
-      <h1>AWS cognito with Amplify Frontend</h1>
+const Home: FunctionComponent = () => {
+  const [authState, setAuthState] = useState<AuthState>();
+  const [user, setUser] = useState<any>();
+
+  useEffect(() => {
+    onAuthUIStateChange((nextAuthState, authData) => {
+      setAuthState(nextAuthState);
+      setUser(authData);
+    });
+  }, []);
+
+  return authState === AuthState.SignedIn && user ? (
+    <div className='App'>
+      <div>Hello, {user.username}</div>
+      <AmplifySignOut />
     </div>
+  ) : (
+    <AmplifyAuthenticator />
   );
-}
+};
+
+export default Home;
