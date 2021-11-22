@@ -76,3 +76,22 @@
       value: userPoolClient.userPoolClientId,
     });
     ```
+
+11. Working with third party provider we need developer account. This case we are dealing with google so follow these steps
+    - Naviagte to google developers console
+    - Create new project
+    - Navigate to credentials
+    - Might need to create OAuth consent screen
+    - Create new credential
+      - OAuth client ID
+      - Select wen application as app type
+      - Enter your user pool domain into Authorized JavaScript origins
+        ```
+        https://DOMAIN-PREFIX.auth.eu-west-1.amazoncognito.com
+        ```
+      - Enter your user pool domain with the /oauth2/idpresponse endpoint into Authorized Redirect URIs.
+        ```
+        https://DOMAIN-PREFIX.auth.eu-west-1.amazoncognito.com/oauth2/idpresponse
+        ```
+      - hit create
+    - from the create OAuth ID copy client ID and secret
