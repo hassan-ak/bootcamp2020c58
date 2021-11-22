@@ -125,3 +125,12 @@
 
 14. Deploy the app using `cdk deploy`
 15. Destroy the app using `cdk destroy`
+
+## Reading Material
+
+- [Google Developer Console](https://console.cloud.google.com/apis/dashboard)
+- [AWS Cognito Docs for third party IdP](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-social-idp.html)
+- [AWS CDK Docs for Third Party Providers](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-cognito-readme.html#identity-providers)
+- [AWS CDK API for Google Provider](https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-cognito.UserPoolIdentityProviderGoogle.html)
+- [AWS Amplify docs for Social Signing](https://docs.amplify.aws/lib/auth/social/q/platform/js/)
+- [AWS Amplify docs for List of Auth Events for Hub](https://docs.amplify.aws/lib/auth/auth-events/q/platform/js/)
