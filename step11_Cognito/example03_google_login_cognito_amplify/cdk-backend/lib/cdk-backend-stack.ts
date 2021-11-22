@@ -73,5 +73,8 @@ export class CdkBackendStack extends cdk.Stack {
         scopes: ["profile", "email", "openid"],
       }
     );
+
+    // register provider with userpool
+    userPool.registerIdentityProvider(provider);
   }
 }
