@@ -11,6 +11,7 @@ We can signin and signup with custom parameters (user ID etc) as explained in st
 - [Define UserPool](./example00_define_userpool)
 - [Userpool with lambda trigger](./example01_userpool_with_lambda_trigger)
 - [Cognito with Frontend Amplify](./example02_cognito_with_frontend_amplify)
+- [Google login cognito Amplify](./example03_google_login_cognito_amplify)
 
 ## Reading Materila
 
