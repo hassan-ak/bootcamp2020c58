@@ -4,6 +4,8 @@
 
 AWS cognito is used for user management (signup/signin).Cognito is based on JWT tokens which are web standards. Amplify and hosted UI can be used to use cognito in the frontend. There are two things in AWS cognito user pools and identity pools. User pools are used for managing users while identity pools are used for configuiring third part identity provider with user pools and giving access to different AWS services to user pools.
 
+We can signin and signup with custom parameters (user ID etc) as explained in step 00 to 02. This is an easy task with an implication that it requires too much security and management. An other way is to work with external providers such as google. One thing to keep in mind we need a developer account with any third party provider if we need to use that service.
+
 ## Sections
 
 - [Define UserPool](./example00_define_userpool)
