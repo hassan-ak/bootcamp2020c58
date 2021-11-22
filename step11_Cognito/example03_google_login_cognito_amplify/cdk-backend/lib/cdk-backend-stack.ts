@@ -39,5 +39,22 @@ export class CdkBackendStack extends cdk.Stack {
         logoutUrls: ["http://localhost:8000/"], // This is what user is allowed to be redirected to after signout. this can be a list of urls.
       },
     });
+
+    // Print Data on console
+    new cdk.CfnOutput(this, "UserPool_region", {
+      value: this.region,
+    });
+    new cdk.CfnOutput(this, "UserPool_domain", {
+      value: domain.domainName,
+    });
+    new cdk.CfnOutput(this, "UserPool_Base_URL", {
+      value: domain.baseUrl(),
+    });
+    new cdk.CfnOutput(this, "UserPool_ID", {
+      value: userPool.userPoolId,
+    });
+    new cdk.CfnOutput(this, "UserPool_client_ID", {
+      value: userPoolClient.userPoolClientId,
+    });
   }
 }
