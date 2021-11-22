@@ -23,5 +23,12 @@ export class CdkBackendStack extends cdk.Stack {
         },
       },
     });
+
+    // Set domain prefix
+    const domain = userPool.addDomain("userPoolDomain", {
+      cognitoDomain: {
+        domainPrefix: "bc2020c58-step03", // SET YOUR OWN Domain PREFIX HERE
+      },
+    });
   }
 }
