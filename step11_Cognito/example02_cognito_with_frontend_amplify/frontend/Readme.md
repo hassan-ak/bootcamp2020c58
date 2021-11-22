@@ -61,3 +61,5 @@
     ```
 
 11. To run the site use `gatsby develop`
+12. Install aws amplify in the app using `yarn add aws-amplify`
+13. Install amplify ui in the app using `yarn add @aws-amplify/ui-react@v1`
