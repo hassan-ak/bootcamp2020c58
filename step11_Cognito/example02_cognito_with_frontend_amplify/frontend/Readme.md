@@ -2,55 +2,55 @@
 
 ## Steps to code
 
-1. Create a new directory by using `mkdir frontend`
-2. Naviagte to the newly created directory using `cd frontend`
-3. use `yarn init` to initilize a yarn project in the directory which creates a package.json file with the following content
-   ```json
-   {
-     "name": "frontend",
-     "version": "1.0.0",
-     "main": "index.js",
-     "license": "MIT"
-   }
-   ```
-4. Install gatsby, react and react dom using `yarn add gatsby react react-dom`. This will update packge.json and create node_modules.json along with yarn.lock
-5. update package.json to add scripts
+1.  Create a new directory by using `mkdir frontend`
+2.  Naviagte to the newly created directory using `cd frontend`
+3.  use `yarn init` to initilize a yarn project in the directory which creates a package.json file with the following content
+    ```json
+    {
+      "name": "frontend",
+      "version": "1.0.0",
+      "main": "index.js",
+      "license": "MIT"
+    }
+    ```
+4.  Install gatsby, react and react dom using `yarn add gatsby react react-dom`. This will update packge.json and create node_modules.json along with yarn.lock
+5.  update package.json to add scripts
 
-   ```json
-   "scripts": {
-      "develop": "gatsby develop",
-      "build": "gatsby build",
-      "clean": "gatsby clean"
-   }
-   ```
+    ```json
+    "scripts": {
+       "develop": "gatsby develop",
+       "build": "gatsby build",
+       "clean": "gatsby clean"
+    }
+    ```
 
-6. create gatsby-config.js
+6.  create gatsby-config.js
 
-   ```javascript
-   module.exports = {
-     plugins: [],
-   };
-   ```
+    ```javascript
+    module.exports = {
+      plugins: [],
+    };
+    ```
 
-7. create "src/pages/index.tsx"
+7.  create "src/pages/index.tsx"
 
-   ```javascript
-   import React from "react";
-   export default function Home() {
-     return <div>Home Page</div>;
-   }
-   ```
+    ```javascript
+    import React from "react";
+    export default function Home() {
+      return <div>Home Page</div>;
+    }
+    ```
 
-8. create "src/pages/404.tsx"
+8.  create "src/pages/404.tsx"
 
-   ```javascript
-   import React from "react";
-   export default function Error() {
-     return <div>Error Page</div>;
-   }
-   ```
+    ```javascript
+    import React from "react";
+    export default function Error() {
+      return <div>Error Page</div>;
+    }
+    ```
 
-9. create "static/favicon.ico"
+9.  create "static/favicon.ico"
 
 10. create ".gitignore"
 
@@ -114,31 +114,33 @@
 
 18. Update "src/pages/index.tsx" to use pre built amplify UI component in the app
 
-    ```javascript
-    import React, { FunctionComponent, useEffect, useState } from "react";
-    import { AmplifyAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
-    import { AuthState, onAuthUIStateChange } from "@aws-amplify/ui-components";
+        ```javascript
+        import React, { FunctionComponent, useEffect, useState } from "react";
+        import { AmplifyAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
+        import { AuthState, onAuthUIStateChange } from "@aws-amplify/ui-components";
 
-    const Home: FunctionComponent = () => {
-      const [authState, setAuthState] = useState<AuthState>();
-      const [user, setUser] = useState<any>();
+        const Home: FunctionComponent = () => {
+          const [authState, setAuthState] = useState<AuthState>();
+          const [user, setUser] = useState<any>();
 
-      useEffect(() => {
-        onAuthUIStateChange((nextAuthState, authData) => {
-          setAuthState(nextAuthState);
-          setUser(authData);
-        });
-      }, []);
+          useEffect(() => {
+            onAuthUIStateChange((nextAuthState, authData) => {
+              setAuthState(nextAuthState);
+              setUser(authData);
+            });
+          }, []);
 
-      return authState === AuthState.SignedIn && user ? (
-        <div className='App'>
-          <div>Hello, {user.username}</div>
-          <AmplifySignOut />
-        </div>
-      ) : (
-        <AmplifyAuthenticator />
-      );
-    };
+          return authState === AuthState.SignedIn && user ? (
+            <div className='App'>
+              <div>Hello, {user.username}</div>
+              <AmplifySignOut />
+            </div>
+          ) : (
+            <AmplifyAuthenticator />
+          );
+        };
 
-    export default Home;
-    ```
+        export default Home;
+        ```
+
+19. Re run the site using `gatsby develop`
