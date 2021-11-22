@@ -30,5 +30,14 @@ export class CdkBackendStack extends cdk.Stack {
         domainPrefix: "bc2020c58-step03", // SET YOUR OWN Domain PREFIX HERE
       },
     });
+
+    // UserPool Client
+    const userPoolClient = new cognito.UserPoolClient(this, "amplifyClient", {
+      userPool,
+      oAuth: {
+        callbackUrls: ["http://localhost:8000/"], // This is what user is allowed to be redirected to with the code upon signin. this can be a list of urls.
+        logoutUrls: ["http://localhost:8000/"], // This is what user is allowed to be redirected to after signout. this can be a list of urls.
+      },
+    });
   }
 }
