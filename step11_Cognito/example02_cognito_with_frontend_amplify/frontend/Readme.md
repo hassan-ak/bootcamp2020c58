@@ -105,3 +105,11 @@
 
     export default ({ element }) => <AmplifyClient>{element}</AmplifyClient>;
     ```
+
+17. create "gatsby-browser.js" and "gatsby-ssr.js"
+
+    ```javascript
+    export { default as wrapRootElement } from "./src/wrappers/wrap-root-element";
+    ```
+
+18.
