@@ -97,4 +97,11 @@
     }
     ```
 
-16.
+16. Create "src/wrappers/wrap-root-element.tsx" ti wrap all the elements in the amplify client
+
+    ```javascript
+    import React from "react";
+    import AmplifyClient from "../amplifyContext/client";
+
+    export default ({ element }) => <AmplifyClient>{element}</AmplifyClient>;
+    ```
