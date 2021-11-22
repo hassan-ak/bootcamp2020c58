@@ -56,5 +56,22 @@ export class CdkBackendStack extends cdk.Stack {
     new cdk.CfnOutput(this, "UserPool_client_ID", {
       value: userPoolClient.userPoolClientId,
     });
+
+    // define identity provider
+    const provider = new cognito.UserPoolIdentityProviderGoogle(
+      this,
+      "googleProvider",
+      {
+        userPool: userPool,
+        clientId: "Google Client ID", // Google Client id
+        clientSecret: "Google Client Secret", // Google Client Secret
+        attributeMapping: {
+          email: cognito.ProviderAttribute.GOOGLE_EMAIL,
+          givenName: cognito.ProviderAttribute.GOOGLE_GIVEN_NAME,
+          phoneNumber: cognito.ProviderAttribute.GOOGLE_PHONE_NUMBERS,
+        },
+        scopes: ["profile", "email", "openid"],
+      }
+    );
   }
 }
