@@ -62,3 +62,23 @@
 
 11. To run the site use `gatsby develop`
 12. Make this app an amplify project by using `amplify init`
+13. Update "src/aws-exports.js" to define user pool parameters in the app
+
+    ```javascript
+    const awsmobile = {
+      aws_project_region: "Enter Your Project Region",
+      aws_cognito_region: "Enter Your Cognito Region",
+      aws_user_pools_id: "ENTER YOUR USER POOL ID",
+      aws_user_pools_web_client_id: "ENTER YOUR CLIENT ID",
+      oauth: {
+        domain: "// ENTER YOUR COGNITO DOMAIN",
+        scope: ["phone", "email", "openid", "profile"],
+        redirectSignIn: "ENTER YOUR SITE",
+        redirectSignOut: "ENTER YOUR SITE",
+        responseType: "code",
+      },
+      federationTarget: "COGNITO_USER_POOLS",
+    };
+
+    export default awsmobile;
+    ```
