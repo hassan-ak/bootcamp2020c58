@@ -85,4 +85,13 @@
     ```
 
 15. Install amplify in the app using `yarn add aws-amplify`
-16.
+16. Configure amplify
+
+    ```javascript
+    import Amplify from "aws-amplify";
+    import awsmobile from "../aws-exports";
+
+    Amplify.configure(awsmobile);
+    ```
+
+17.
