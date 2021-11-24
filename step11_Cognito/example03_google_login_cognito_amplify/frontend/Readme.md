@@ -94,4 +94,14 @@
     Amplify.configure(awsmobile);
     ```
 
-17.
+17. Define a function to get user
+
+    ```javascript
+    function getUser() {
+      return Auth.currentAuthenticatedUser()
+        .then((userData) => userData)
+        .catch(() => console.log("Not Signed In"));
+    }
+    ```
+
+18.
