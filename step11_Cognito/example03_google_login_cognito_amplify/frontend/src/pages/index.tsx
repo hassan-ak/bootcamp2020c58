@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Amplify, { Auth, Hub } from "aws-amplify";
+import Amplify, { Hub, Auth } from "aws-amplify";
 import awsmobile from "../aws-exports";
 
 Amplify.configure(awsmobile);
@@ -35,5 +35,26 @@ export default function Home() {
       .catch(() => console.log("Not Signed In"));
   }
 
-  return <div>Home Page</div>;
+  return (
+    <main style={{ display: "grid", placeItems: "center", height: "100%" }}>
+      {user ? (
+        <div>
+          <button onClick={() => Auth.signOut()}>
+            <h1>Sign out</h1>
+          </button>
+          <h1>User Data object:</h1>
+          <div style={{ width: "700px", height: "70vh", overflow: "scroll" }}>
+            <pre>User: {user.username}</pre>
+          </div>
+        </div>
+      ) : (
+        <div>
+          <h1>No User Logged In.</h1>
+          <button onClick={() => Auth.federatedSignIn({ provider: "Google" })}>
+            Sign In with Google
+          </button>
+        </div>
+      )}
+    </main>
+  );
 }
