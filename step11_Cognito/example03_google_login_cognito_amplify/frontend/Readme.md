@@ -1,4 +1,4 @@
-# Gatsby Empty Project
+# Gatsby + Amplify Cognito with Google Signin.
 
 ## Steps to code
 
@@ -61,3 +61,4 @@
     ```
 
 11. To run the site use `gatsby develop`
+12. Make this app an amplify project by using `amplify init`
