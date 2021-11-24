@@ -156,3 +156,8 @@
       )}
     </main>
     ```
+
+## Reading Material
+
+- [Amplify Client Config](https://docs.amplify.aws/lib/client-configuration/configuring-amplify-categories/q/platform/js/)
+- [Amplify Hub](https://docs.amplify.aws/lib/utilities/hub/q/platform/js/)
