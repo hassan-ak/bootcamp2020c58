@@ -62,7 +62,8 @@
 
 11. To run the site use `gatsby develop`
 12. Make this app an amplify project by using `amplify init`
-13. Update "src/aws-exports.js" to define user pool parameters in the app
+13. Run the app using `amplify serve`
+14. Update "src/aws-exports.js" to define user pool parameters in the app
 
     ```javascript
     const awsmobile = {
@@ -82,3 +83,6 @@
 
     export default awsmobile;
     ```
+
+15. Install amplify in the app using `yarn add aws-amplify`
+16.
